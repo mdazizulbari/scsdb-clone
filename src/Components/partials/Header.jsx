@@ -22,10 +22,12 @@ const Header = ({ data }) => {
       <p className="text-white">
         <i className="ri-megaphone-fill text-yellow-500"></i>{" "}
         {data.release_date || "No information"}
-        <i className="ri-megaphone-fill text-yellow-500"></i>{" "}
+        <i className="ri-megaphone-fill text-yellow-500 ml-2"></i>{" "}
         {data.media_type.toUpperCase()}
       </p>
-      <Link className="p-4 rounded bg-[#6556CD]">Watch Trailler</Link>
+      <Link className="px-4 py-2 my-2 text-white rounded bg-[#6556CD]">
+        Watch Trailler
+      </Link>
     </div>
   );
 };
