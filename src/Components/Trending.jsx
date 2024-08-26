@@ -20,13 +20,12 @@ const Trending = () => {
       console.log("Error: ", error);
     }
   };
-  console.log(trending);
   useEffect(() => {
     getTrending();
   }, [category, duration]);
 
   return trending ? (
-    <div className="w-screen h-screen px-[3%]">
+    <div className="w-screen h-screen px-[3%] overflow-hidden overflow-y-auto">
       <div className="w-full flex items-center justify-between">
         <h1 className="w-1/5 text-2xl text-white font-semibold">
           <i
