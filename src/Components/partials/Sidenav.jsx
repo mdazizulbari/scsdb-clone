@@ -13,23 +13,23 @@ const Sidenav = () => {
           New Feed
         </h1>
         <Link className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
-          <i class="mr-2 ri-fire-fill"></i>
+          <i className="mr-2 ri-fire-fill"></i>
           Trending
         </Link>
         <Link className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
-          <i class="mr-2 ri-bard-fill"></i>
+          <i className="mr-2 ri-bard-fill"></i>
           Popular
         </Link>
         <Link className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
-          <i class="mr-2 ri-movie-2-fill"></i>
+          <i className="mr-2 ri-movie-2-fill"></i>
           Movies
         </Link>
         <Link className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
-          <i class="mr-2 ri-tv-2-fill"></i>
+          <i className="mr-2 ri-tv-2-fill"></i>
           Tv Shows
         </Link>
         <Link className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
-          <i class="mr-2 ri-team-fill"></i>
+          <i className="mr-2 ri-team-fill"></i>
           People
         </Link>
       </nav>
@@ -40,11 +40,11 @@ const Sidenav = () => {
           Website Information
         </h1>
         <Link className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
-          <i class="mr-2 ri-information-fill"></i>
+          <i className="mr-2 ri-information-fill"></i>
           About
         </Link>
         <Link className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
-          <i class="mr-2 ri-phone-fill"></i>
+          <i className="mr-2 ri-phone-fill"></i>
           Contact
         </Link>
       </nav>
