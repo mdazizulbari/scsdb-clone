@@ -7,7 +7,7 @@ const App = () => {
     <main className="w-screen h-screen flex bg-[#1F1E24]">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/trendningl" element={<Trending />} />
+        <Route path="/trending" element={<Trending />} />
       </Routes>
     </main>
   );
