@@ -5,6 +5,7 @@ import axios from "../utils/axios";
 import Header from "./partials/Header";
 import HorizontalCards from "./partials/HorizontalCards";
 import Dropdown from "./partials/Dropdown";
+import Loading from "./partials/Loading";
 
 const Home = () => {
   document.title = "SCSDB | Homepage";
@@ -35,7 +36,7 @@ const Home = () => {
     !wallpaper && getHeaderWallpaper();
   }, [category]);
 
-  return wallpaper && trending ?(
+  return (wallpaper || trending) ?(
     <>
       <Sidenav />
       <div className="w-4/5 h-full overflow-y-auto bg-zinc-900">
@@ -50,6 +51,6 @@ const Home = () => {
         <HorizontalCards data={trending}/>
       </div>
     </>
-  ) : <h1>Loading...</h1>
+  ) : <Loading/>
 };
 export default Home;
