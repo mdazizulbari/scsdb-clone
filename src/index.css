@@ -20,3 +20,48 @@
 ::-webkit-scrollbar-thumb:hover{
     background: #6556CD;
 }
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0;
+    background: #27272a;
+    background-image: none;
+    padding: 0 .5em;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: "open sans", sans-serif;
+    width: 100%;
+}
+select::-ms-expand{
+    display: none;
+}
+.select{
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    overflow: hidden;
+    border-radius: .25em;
+    background: #27272a;
+}
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0em 1em;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+    background: #27272a;
+}
+.select:hover::after{
+    color: #6556CD;
+}
