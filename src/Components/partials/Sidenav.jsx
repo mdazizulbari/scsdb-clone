@@ -27,21 +27,21 @@ const Sidenav = () => {
           Popular
         </Link>
         <Link
-          to="/movies"
+          to="/movie"
           className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
         >
           <i className="mr-2 ri-movie-2-fill"></i>
           Movies
         </Link>
         <Link
-          to="/tvshows"
+          to="/tv"
           className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
         >
           <i className="mr-2 ri-tv-2-fill"></i>
           Tv Shows
         </Link>
         <Link
-          to="/people"
+          to="/person"
           className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
         >
           <i className="mr-2 ri-team-fill"></i>

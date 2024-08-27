@@ -5,6 +5,9 @@ import Popular from "./Components/Popular";
 import Movies from "./Components/Movies";
 import Tvshows from "./Components/Tvshows";
 import People from "./Components/People";
+import MovieDetails from "./Components/movieDetails";
+import TvDetails from "./Components/TvDetails";
+import PersonDetails from "./Components/personDetails";
 
 const App = () => {
   return (
@@ -13,9 +16,12 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/trending" element={<Trending />} />
         <Route path="/popular" element={<Popular />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/tvshows" element={<Tvshows />} />
-        <Route path="/people" element={<People />} />
+        <Route path="/movie" element={<Movies />} />
+        <Route path="/movie/details/:id" element={<MovieDetails />} />
+        <Route path="/tv" element={<Tvshows />} />
+        <Route path="/tv/details/:id" element={<TvDetails />} />
+        <Route path="/person" element={<People />} />
+        <Route path="/person/details/:id" element={<PersonDetails />} />
       </Routes>
     </main>
   );

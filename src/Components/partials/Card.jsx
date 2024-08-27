@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 
 const Card = ({ data, title }) => {
+  console.log(data)
   return (
     <div className="w-full h-full px-[3%] flex flex-wrap bg-[#1F1E24]">
       {data.map((card, index) => {
         return (
-          <Link className="w-[25vh] mr-[5%] mb-[5%] relative" key={index}>
+          <Link
+            to={`/${  title}/details/${card.id}`}
+            className="w-[25vh] mr-[5%] mb-[5%] relative"
+            key={index}
+          >
             <img
               className="h-[40vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover"
               src={`https://image.tmdb.org/t/p/original/${
