@@ -1,4 +1,4 @@
-import loader from "../../../public/loader.webp"
+import loader from "../../public/loader.webp"
 
 const Loading = () => {
   return (
