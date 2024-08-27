@@ -8,7 +8,7 @@ import Dropdown from "./partials/Dropdown";
 import Card from "./partials/Card";
 
 const Tvshows = () => {
-  document.title = "SCSDB | tv";
+  document.title = "SCSDB | TV Shows";
   const navigate = useNavigate();
   const [category, setCategory] = useState("airing_today");
   const [tv, setTv] = useState([]);
@@ -50,14 +50,15 @@ const Tvshows = () => {
             className="ri-arrow-left-line hover:text-[#6556CD]"
             onClick={() => navigate(-1)}
           ></i>{" "}
-          tv<small className="ml-2 text-sm text-zinc-500">({category})</small>
+          TV Shows
+          <small className="ml-2 text-sm text-zinc-500">({category})</small>
         </h1>
 
         <div className="w-4/5 flex items-center">
           <Topnav />
           <Dropdown
             title="Category"
-            options={["popular","top_rated","upcomming","now_playing"]}
+            options={["popular", "top_rated", "on_the_air", "airing_today"]}
             func={(e) => setCategory(e.target.value)}
           />
           <div className="w-[2%]"></div>
@@ -77,4 +78,3 @@ const Tvshows = () => {
   );
 };
 export default Tvshows;
-

@@ -12,23 +12,38 @@ const Sidenav = () => {
         <h1 className="mt-10 mb-5 text-xl text-white font-semibold">
           New Feed
         </h1>
-        <Link to="/trending" className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
+        <Link
+          to="/trending"
+          className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
+        >
           <i className="mr-2 ri-fire-fill"></i>
           Trending
         </Link>
-        <Link to="/popular" className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
+        <Link
+          to="/popular"
+          className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
+        >
           <i className="mr-2 ri-bard-fill"></i>
           Popular
         </Link>
-        <Link to="/movie" className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
+        <Link
+          to="/movies"
+          className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
+        >
           <i className="mr-2 ri-movie-2-fill"></i>
           Movies
         </Link>
-        <Link className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
+        <Link
+          to="/tvshows"
+          className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
+        >
           <i className="mr-2 ri-tv-2-fill"></i>
           Tv Shows
         </Link>
-        <Link className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
+        <Link
+          to="/people"
+          className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
+        >
           <i className="mr-2 ri-team-fill"></i>
           People
         </Link>

@@ -7,19 +7,19 @@ import Topnav from "./partials/Topnav";
 import Dropdown from "./partials/Dropdown";
 import Card from "./partials/Card";
 
-const Popular = () => {
-  document.title = "SCSDB | Popular";
+const Movies = () => {
+  document.title = "SCSDB | Movie";
   const navigate = useNavigate();
-  const [category, setCategory] = useState("movie");
-  const [popular, setPopular] = useState([]);
+  const [category, setCategory] = useState("now_playing");
+  const [movie, setmovie] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
-  const getPopular = async () => {
+  const getMovie = async () => {
     try {
-      const { data } = await axios.get(`${category}/popular?page=${page}`);
+      const { data } = await axios.get(`/movie/${category}?page=${page}`);
       if (data.results.length > 0) {
-        setPopular((previousState) => [...previousState, ...data.results]);
+        setmovie((previousState) => [...previousState, ...data.results]);
         setPage(page + 1);
       } else {
         setHasMore(false);
@@ -30,19 +30,19 @@ const Popular = () => {
   };
 
   const refreshHandler = () => {
-    if (popular.length === 0) {
-      getPopular();
+    if (movie.length === 0) {
+      getMovie();
     } else {
       setPage(1);
-      setPopular([]);
-      getPopular();
+      setmovie([]);
+      getMovie();
     }
   };
 
   useEffect(() => {
     refreshHandler();
   }, [category]);
-  return popular.length > 0 ? (
+  return movie.length > 0 ? (
     <div className="w-screen h-screen">
       <div className="w-full px-[3%] flex items-center justify-between">
         <h1 className="w-1/5 text-2xl text-white font-semibold">
@@ -50,7 +50,7 @@ const Popular = () => {
             className="ri-arrow-left-line hover:text-[#6556CD]"
             onClick={() => navigate(-1)}
           ></i>{" "}
-          Popular
+          Movie
           <small className="ml-2 text-sm text-zinc-500">({category})</small>
         </h1>
 
@@ -58,23 +58,23 @@ const Popular = () => {
           <Topnav />
           <Dropdown
             title="Category"
-            options={["movie", "tv"]}
+            options={["popular", "top_rated", "upcomming", "now_playing"]}
             func={(e) => setCategory(e.target.value)}
           />
           <div className="w-[2%]"></div>
         </div>
       </div>
       <InfiniteScroll
-        dataLength={popular.length}
-        next={getPopular}
+        dataLength={movie.length}
+        next={getMovie}
         hasMore={hasMore}
         loader={<h1>Loading...</h1>}
       >
-        <Card data={popular} title={category} />
+        <Card data={movie} title={category} />
       </InfiniteScroll>
     </div>
   ) : (
     <Loading />
   );
 };
-export default Popular;
+export default Movies;

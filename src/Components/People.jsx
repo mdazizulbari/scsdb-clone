@@ -7,19 +7,19 @@ import Topnav from "./partials/Topnav";
 import Dropdown from "./partials/Dropdown";
 import Card from "./partials/Card";
 
-const Movie = () => {
-  document.title = "SCSDB | Movie";
+const People = () => {
+  document.title = "SCSDB | People";
   const navigate = useNavigate();
-  const [category, setCategory] = useState("now_playing");
-  const [movie, setmovie] = useState([]);
+  const [category, setCategory] = useState("popular");
+  const [person, setPerson] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
-  const getMovie = async () => {
+  const getPerson = async () => {
     try {
-      const { data } = await axios.get(`/movie/${category}?page=${page}`);
+      const { data } = await axios.get(`/person/${category}?page=${page}`);
       if (data.results.length > 0) {
-        setmovie((previousState) => [...previousState, ...data.results]);
+        setPerson((previousState) => [...previousState, ...data.results]);
         setPage(page + 1);
       } else {
         setHasMore(false);
@@ -30,19 +30,19 @@ const Movie = () => {
   };
 
   const refreshHandler = () => {
-    if (movie.length === 0) {
-      getMovie();
+    if (person.length === 0) {
+      getPerson();
     } else {
       setPage(1);
-      setmovie([]);
-      getMovie();
+      setPerson([]);
+      getPerson();
     }
   };
 
   useEffect(() => {
     refreshHandler();
   }, [category]);
-  return movie.length > 0 ? (
+  return person.length > 0 ? (
     <div className="w-screen h-screen">
       <div className="w-full px-[3%] flex items-center justify-between">
         <h1 className="w-1/5 text-2xl text-white font-semibold">
@@ -50,31 +50,25 @@ const Movie = () => {
             className="ri-arrow-left-line hover:text-[#6556CD]"
             onClick={() => navigate(-1)}
           ></i>{" "}
-          Movie<small className="ml-2 text-sm text-zinc-500">({category})</small>
+          People
+          <small className="ml-2 text-sm text-zinc-500">({category})</small>
         </h1>
 
         <div className="w-4/5 flex items-center">
           <Topnav />
-          <Dropdown
-            title="Category"
-            options={["popular","top_rated","upcomming","now_playing"]}
-            func={(e) => setCategory(e.target.value)}
-          />
-          <div className="w-[2%]"></div>
         </div>
       </div>
       <InfiniteScroll
-        dataLength={movie.length}
-        next={getMovie}
+        dataLength={person.length}
+        next={getPerson}
         hasMore={hasMore}
         loader={<h1>Loading...</h1>}
       >
-        <Card data={movie} title={category} />
+        <Card data={person} title={category} />
       </InfiniteScroll>
     </div>
   ) : (
     <Loading />
   );
 };
-export default Movie;
-
+export default People;
