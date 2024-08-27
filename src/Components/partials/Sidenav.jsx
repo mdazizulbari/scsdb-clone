@@ -20,7 +20,7 @@ const Sidenav = () => {
           <i className="mr-2 ri-bard-fill"></i>
           Popular
         </Link>
-        <Link className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
+        <Link to="/movie" className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300">
           <i className="mr-2 ri-movie-2-fill"></i>
           Movies
         </Link>
