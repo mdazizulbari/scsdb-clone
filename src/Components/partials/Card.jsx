@@ -5,7 +5,7 @@ const Card = ({ data, title }) => {
     <div className="w-full h-full px-[3%] flex flex-wrap bg-[#1F1E24]">
       {data.map((card, index) => {
         return (
-          <Link className="w-[25vh] mr-[5%] mb-[5%]" key={index}>
+          <Link className="w-[25vh] mr-[5%] mb-[5%] relative" key={index}>
             <img
               className="h-[40vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover"
               src={`https://image.tmdb.org/t/p/original/${
@@ -19,6 +19,12 @@ const Card = ({ data, title }) => {
                 card.original_name ||
                 card.original_title}
             </h1>
+            {card.vote_average && (
+              <div className="w-[5vh] h-[5vh] flex items-center justify-center text-xl text-white font-semibold absolute right-[-10%] bottom-[25%] rounded-full bg-yellow-600">
+                {(card.vote_average * 10).toFixed()}
+                <sup>%</sup>
+              </div>
+            )}
           </Link>
         );
       })}
