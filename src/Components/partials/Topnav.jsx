@@ -36,7 +36,7 @@ const Topnav = () => {
         ></i>
       )}
 
-      <div className="w-1/2 max-h-[50vh] z-[100] absolute top-full left-[5%] bg-zinc-200 overflow-auto">
+      <div className="w-1/2 max-h-[50vh] z-10 absolute top-full left-[5%] bg-zinc-200 overflow-auto">
         {searches.map((search, index) => (
           <Link
           to={`/${search.media_type}/details/${search.id}`}

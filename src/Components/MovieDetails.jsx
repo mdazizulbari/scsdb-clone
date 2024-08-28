@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import { asyncloadmovie, removeMovie } from "../store/actions/movieAction";
 import Loading from "./Loading";
 import HorizontalCards from "./partials/HorizontalCards";
@@ -26,7 +26,7 @@ const MovieDetails = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className="w-screen h-fit px-[10%]"
+      className="w-screen h-fit px-[10%] relative"
     >
       {/* Nav part 1 Navigation*/}
       <nav className="w-full h-[10vh] text-xl text-zinc-100 flex items-center gap-10">
@@ -152,6 +152,7 @@ const MovieDetails = () => {
           info.recommendations.length > 0 ? info.recommendations : info.similar
         }
       />
+      <Outlet/>
     </div>
   ) : (
     <Loading />
