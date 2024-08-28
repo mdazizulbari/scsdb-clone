@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 const Card = ({ data, title }) => {
-  console.log(data)
+  console.log(data);
   return (
     <div className="w-full h-full px-[3%] flex flex-wrap bg-[#1F1E24]">
       {data.map((card, index) => {
         return (
           <Link
-            to={`/${  title}/details/${card.id}`}
+            to={`/${title}/details/${card.id}`}
             className="w-[25vh] mr-[5%] mb-[5%] relative"
             key={index}
           >
