@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 
-const Header = ({ data }) => {
+const Header = ({ data = [] }) => {
+  console.log(data);
   return (
     <div
       style={{
-        background: `linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.5),rgba(0,0,0,.8)), url(https://image.tmdb.org/t/p/original/${
+        background:
           data.backdrop_path || data.profile_path
-        })`,
+            ? `linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.5),rgba(0,0,0,.8)), url(https://image.tmdb.org/t/p/original/${
+                data.backdrop_path || data.profile_path
+              })`
+            : "none",
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
@@ -25,7 +29,10 @@ const Header = ({ data }) => {
         <i className="ri-megaphone-fill text-yellow-500 ml-2"></i>{" "}
         {data.media_type.toUpperCase()}
       </p>
-      <Link to={`/${data.media_type}/details/${data.id}`} className="px-4 py-2 my-2 text-white rounded bg-[#6556CD]">
+      <Link
+        to={`/${data.media_type}/details/${data.id}/trailer`}
+        className="px-4 py-2 my-2 text-white rounded bg-[#6556CD]"
+      >
         Watch Trailler
       </Link>
     </div>

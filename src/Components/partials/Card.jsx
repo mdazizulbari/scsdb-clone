@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import noimage from "../../../public/imageNotFound.avif";
 
 const Card = ({ data, title }) => {
   console.log(data);
@@ -13,10 +14,13 @@ const Card = ({ data, title }) => {
           >
             <img
               className="h-[40vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover"
-              src={`https://image.tmdb.org/t/p/original/${
-                card.backdrop_path || card.profile_path || card.poster_path
-              }`}
-              alt=""
+              src={
+                d.backdrop_path || d.profile_path || d.poster_path
+                  ? `https://image.tmdb.org/t/p/original/${
+                      d.backdrop_path || d.profile_path || d.poster_path
+                    }`
+                  : noimage
+              }
             />
             <h1 className="mt-3 font-semibold text-2xl text-zinc-300">
               {card.name ||

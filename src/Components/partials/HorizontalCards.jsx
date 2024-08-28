@@ -1,21 +1,25 @@
 import { Link } from "react-router-dom";
+import noimage from "../../../public/imageNotFound.avif";
 
-const HorizontalCards = ({ data }) => {
+const HorizontalCards = ({ data=[] }) => {
   return (
     <div className="w-full mb-5 p-5 flex overflow-y-hidden">
-      {data.length > 0 ? (
+      {data.length>0 ? (
         data.map((d, i) => (
           <Link
             to={`/${d.media_type}/details/${d.id}`}
             className="min-w-[15%] mr-5 overflow-x-scroll'"
             key={i}
-          >
+          > 
             <img
               className="w-full h-3/5 object-cover"
-              src={`https://image.tmdb.org/t/p/original/${
+              src={
                 d.backdrop_path || d.profile_path || d.poster_path
-              }`}
-              alt=""
+                  ? `https://image.tmdb.org/t/p/original/${
+                      d.backdrop_path || d.profile_path || d.poster_path
+                    }`
+                  : noimage
+              }
             />
             <div className="h-2/5 p-3 text-white">
               <h1 className="mt-1 text-xl font-semibold">
