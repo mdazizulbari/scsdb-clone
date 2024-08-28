@@ -1,6 +1,7 @@
 import ReactPlayer from "react-player";
 import { useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import NotFound from "../NotFound";
 
 const Trailer = () => {
   const navigate = useNavigate();
@@ -15,11 +16,15 @@ const Trailer = () => {
         className="ri-close-fill text-3xl text-white absolute top-[5%] right-[3%] hover:text-[#6556CD]"
         onClick={() => navigate(-1)}
       ></Link>
-      <ReactPlayer
-        height={800}
-        width={1500}
-        url={`https://www.youtube.com/watch?v=${ytvideo.key}`}
-      />
+      {ytvideo ? (
+        <ReactPlayer
+          height={800}
+          width={1500}
+          url={`https://www.youtube.com/watch?v=${ytvideo.key}`}
+        />
+      ) : (
+        <NotFound />
+      )}
     </div>
   );
 };

@@ -9,6 +9,7 @@ import MovieDetails from "./Components/movieDetails";
 import TvDetails from "./Components/TvDetails";
 import PersonDetails from "./Components/personDetails";
 import Trailer from "./Components/partials/Trailer";
+import NotFound from "./Components/NotFound";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/tv/details/:id" element={<TvDetails />} />
         <Route path="/person" element={<People />} />
         <Route path="/person/details/:id" element={<PersonDetails />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </main>
   );

@@ -4,7 +4,7 @@ import Dropdown from "./Dropdown";
 const HorizontalCards = ({ data }) => {
   return (
     <div className="w-full mb-5 p-5 flex overflow-y-hidden">
-      {data.map((d, i) => (
+      {data.length>0 ? data.map((d, i) => (
         <Link
           to={`/${d.media_type}/details/${d.id}`}
           className="min-w-[15%] mr-5 overflow-x-scroll'"
@@ -27,7 +27,7 @@ const HorizontalCards = ({ data }) => {
             </p>
           </div>
         </Link>
-      ))}
+      )) : <h1 className="mt-5 text-3xl text-center text-white font-black">Nothing to show</h1>}
     </div>
   );
 };
