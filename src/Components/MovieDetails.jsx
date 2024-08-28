@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { asyncloadmovie, removeMovie } from "../store/actions/movieAction";
 import Loading from "./Loading";
 import HorizontalCards from "./partials/HorizontalCards";
@@ -122,8 +128,9 @@ const MovieDetails = () => {
         {info.watchproviders && info.watchproviders.rent && (
           <div className="text-white flex items-center gap-x-10">
             <h1>Avaiable on Rent</h1>
-            {info.watchproviders.rent.map((watchprovider) => (
+            {info.watchproviders.rent.map((watchprovider, index) => (
               <img
+                key={index}
                 title={watchprovider.provider_name}
                 className="w-[5vh] h-[5vh] object-cover rounded-md"
                 src={`https://image.tmdb.org/t/p/original/${watchprovider.logo_path}`}
@@ -134,8 +141,9 @@ const MovieDetails = () => {
         {info.watchproviders && info.watchproviders.buy && (
           <div className="text-white flex items-center gap-x-10">
             <h1>Avaiable to Buy</h1>
-            {info.watchproviders.buy.map((watchprovider) => (
+            {info.watchproviders.buy.map((watchprovider, index) => (
               <img
+                key={index}
                 title={watchprovider.provider_name}
                 className="w-[5vh] h-[5vh] object-cover rounded-md"
                 src={`https://image.tmdb.org/t/p/original/${watchprovider.logo_path}`}
@@ -146,13 +154,15 @@ const MovieDetails = () => {
       </div>
 
       {/* Nav part 4 Recommendations and similar stuff */}
-          <h1 className="mt-5 text-3xl text-white font-semibold">Recommendations</h1>
+      <h1 className="mt-5 text-3xl text-white font-semibold">
+        Recommendations
+      </h1>
       <HorizontalCards
         data={
           info.recommendations.length > 0 ? info.recommendations : info.similar
         }
       />
-      <Outlet/>
+      <Outlet />
     </div>
   ) : (
     <Loading />
