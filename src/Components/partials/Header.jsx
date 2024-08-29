@@ -19,7 +19,7 @@ const Header = ({ data = [] }) => {
         {data.name || data.title || data.original_name || data.original_title}
       </h1>
       <p className="w-3/4 my-3 text-white">
-        {data.overview.slice(0, 200)}...
+        {data.overview.slice(0, 200) || <h1>Please Refreash the page</h1>}...
         <Link className="text-blue-400"> more</Link>
       </p>
       <p className="text-white">

@@ -24,7 +24,6 @@ const Trending = () => {
       if (data.results.length > 0) {
         settrending((previousState) => [...previousState, ...data.results]);
         setPage(page + 1);
-        console.log(data.results.media_type);
       } else {
         setHasMore(false);
       }
