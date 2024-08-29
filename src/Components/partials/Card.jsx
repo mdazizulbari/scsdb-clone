@@ -15,9 +15,9 @@ const Card = ({ data, title }) => {
             <img
               className="h-[40vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover"
               src={
-                d.backdrop_path || d.profile_path || d.poster_path
+                card.backdrop_path || card.profile_path || card.poster_path
                   ? `https://image.tmdb.org/t/p/original/${
-                      d.backdrop_path || d.profile_path || d.poster_path
+                      card.backdrop_path || card.profile_path || card.poster_path
                     }`
                   : noimage
               }
