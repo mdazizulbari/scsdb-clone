@@ -24,6 +24,7 @@ const Trending = () => {
       if (data.results.length > 0) {
         settrending((previousState) => [...previousState, ...data.results]);
         setPage(page + 1);
+        console.log(data.results.media_type);
       } else {
         setHasMore(false);
       }
@@ -54,7 +55,8 @@ const Trending = () => {
             className="ri-arrow-left-line hover:text-[#6556CD]"
             onClick={() => navigate(-1)}
           ></i>{" "}
-          Trending<small className="ml-2 text-sm text-zinc-500">({category})</small>
+          Trending
+          <small className="ml-2 text-sm text-zinc-500">({category})</small>
         </h1>
 
         <div className="w-4/5 flex items-center">
@@ -78,7 +80,7 @@ const Trending = () => {
         hasMore={hasMore}
         loader={<h1>Loading...</h1>}
       >
-        <Card data={trending} title={category} />
+        <Card data={trending} />
       </InfiniteScroll>
     </div>
   ) : (

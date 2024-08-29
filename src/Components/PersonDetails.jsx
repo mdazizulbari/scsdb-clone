@@ -124,9 +124,8 @@ const PersonDetails = () => {
 
           <div className="list-disc w-full h-[50vh] mt-5 p-5 overflow-x-hidden overflow-y-auto text-zinc-400 shadow-xl shadow-[rgba(255,255,255,.3)] border-2 border-zinc-700">
             {info[category + "Credits"].cast.map((c, index) => (
-              <li className="p-5 rounded cursor-pointer duration-300 hover:text-white hover:bg-[#19191d]">
+              <li key={index} className="p-5 rounded cursor-pointer duration-300 hover:text-white hover:bg-[#19191d]">
                 <Link
-                  key={index}
                   to={`/${category}/details/${c.id}`}
                   className="text-lg font-semibold"
                 >

@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import noimage from "../../../public/imageNotFound.avif";
 
 const Card = ({ data, title }) => {
-  console.log(data);
   return (
     <div className="w-full h-full px-[3%] flex flex-wrap bg-[#1F1E24]">
       {data.map((card, index) => {
         return (
           <Link
-            to={`/${title}/details/${card.id}`}
+            to={`/${title || card.media_type}/details/${card.id}`}
             className="w-[25vh] mr-[5%] mb-[5%] relative"
             key={index}
           >
@@ -17,7 +16,9 @@ const Card = ({ data, title }) => {
               src={
                 card.backdrop_path || card.profile_path || card.poster_path
                   ? `https://image.tmdb.org/t/p/original/${
-                      card.backdrop_path || card.profile_path || card.poster_path
+                      card.backdrop_path ||
+                      card.profile_path ||
+                      card.poster_path
                     }`
                   : noimage
               }
