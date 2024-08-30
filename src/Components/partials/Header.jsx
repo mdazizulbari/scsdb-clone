@@ -13,7 +13,7 @@ const Header = ({ data = [] }) => {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className="w-full h-[50vh] p-[5%] flex flex-col justify-end items-start"
+      className="w-full h-[50vh] p-[5%] flex flex-col justify-end items-start rounded-3xl"
     >
       <h1 className="w-3/4 text-5xl text-white font-black">
         {data.name || data.title || data.original_name || data.original_title}

@@ -8,11 +8,11 @@ const Card = ({ data, title }) => {
         return (
           <Link
             to={`/${title || card.media_type}/details/${card.id}`}
-            className="w-[25vh] mr-[5%] mb-[5%] relative"
+            className="w-[25vh] mr-[5%] mb-[3%] relative"
             key={index}
           >
             <img
-              className="h-[40vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover"
+              className="h-[40vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover rounded-3xl"
               src={
                 card.backdrop_path || card.profile_path || card.poster_path
                   ? `https://image.tmdb.org/t/p/original/${
