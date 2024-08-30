@@ -36,15 +36,15 @@ const Topnav = () => {
         ></i>
       )}
 
-      <div className="w-full mt-5 max-h-[50vh] z-10 absolute -left-[.1%] top-full rounded-3xl bg-zinc-800 overflow-auto">
+      <div className="w-full mt-5 max-h-[70vh] z-10 absolute -left-[.1%] top-full rounded-3xl bg-zinc-800 overflow-auto">
         {searches.map((search, index) => (
           <Link
           to={`/${search.media_type}/details/${search.id}`}
             key={index}
-            className="w-full p-10 font-semibold flex justify-start items-center border-b-2 border-zinc-700 text-zinc-400 hover:text-white hover:bg-[#6556CD] duration-300"
+            className="w-full px-10 py-5 font-semibold flex justify-start items-center border-b-2 border-zinc-700 text-zinc-400 hover:text-white hover:bg-[#6556CD] duration-300"
           >
             <img
-            className="w-[14vh] h-[14vh] mr-5 shadow-lg object-cover rounded-3xl"
+            className="w-[10vh] h-[10vh] mr-5 shadow-lg object-cover rounded-3xl"
               src={
                 search.backdrop_path || search.profile_path
                   ? `https://image.tmdb.org/t/p/original/${
