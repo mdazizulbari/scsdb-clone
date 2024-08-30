@@ -58,7 +58,7 @@ const Trending = () => {
           <small className="ml-2 text-lg text-zinc-400">({category})</small>
         </h1>
 
-        <div className="w-4/5 flex items-center">
+        <div className="w-4/5 flex items-center overflow-x-hidden">
           <Topnav />
           <Dropdown
             title="Category"

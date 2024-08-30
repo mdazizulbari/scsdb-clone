@@ -43,7 +43,7 @@ const People = () => {
     refreshHandler();
   }, [category]);
   return person.length > 0 ? (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen overflow-x-hidden">
       <div className="w-full px-[3%] flex items-center justify-between">
         <h1 className="w-1/5 text-2xl text-white font-semibold">
           <i
@@ -51,7 +51,7 @@ const People = () => {
             onClick={() => navigate(-1)}
           ></i>{" "}
           People
-          <small className="ml-2 text-sm text-zinc-500">({category})</small>
+          <small className="ml-2 text-lg text-zinc-400">({category})</small>
         </h1>
 
         <div className="w-4/5 flex items-center">
