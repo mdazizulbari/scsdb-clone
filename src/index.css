@@ -34,7 +34,7 @@ select{
     background-image: none;
     padding: 0 1em;
     border-radius: 50rem;
-    color: white;
+    color: rgb(175, 174, 174);
     cursor: pointer;
     font-size: 1em;
     font-family: "open sans", sans-serif;
@@ -61,6 +61,7 @@ select::-ms-expand{
     padding: 0em 1em;
     cursor: pointer;
     pointer-events: none;
+    color: gray;
     transition: .4s all ease;
     background: rgb(59, 59, 59);
 }
