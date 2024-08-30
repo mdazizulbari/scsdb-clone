@@ -8,7 +8,7 @@ const Card = ({ data, title }) => {
         return (
           <Link
             to={`/${title || card.media_type}/details/${card.id}`}
-            className="w-[25vh] mr-8 mb-10 relative rounded-3xl hover:bg-[#6556CD]"
+            className="w-[25vh] mr-8 mb-10 relative rounded-3xl transition-all ease-in duration-200 hover:bg-[#6556CD]"
             key={index}
           >
             <img

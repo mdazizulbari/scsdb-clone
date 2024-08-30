@@ -14,7 +14,7 @@ import Loading from "./Components/Loading";
 
 const App = () => {
   return (
-    <main className="w-screen h-screen flex bg-[#1F1E24]">
+    <main className="w-screen h-screen flex bg-[#1F1E24] overflow-x-hidden">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/trending" element={<Trending />} />

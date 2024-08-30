@@ -20,7 +20,7 @@ const Topnav = () => {
   }, [query]);
 
   return (
-    <div className="w-1/2 h-[8vh] mx-auto px-5 relative flex items-center justify-between rounded-full hover:bg-[#6556CD]">
+    <div className="w-1/2 h-[8vh] mx-auto px-5 relative flex items-center justify-between rounded-full transition-all ease-in duration-300 hover:bg-[#6556CD]">
       <i className="ri-search-line text-3xl text-zinc-300 hover:text-white"></i>
       <input
         onChange={(e) => setQuery(e.target.value)}

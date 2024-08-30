@@ -31,7 +31,7 @@ const Header = ({ data = [] }) => {
       </p>
       <Link
         to={`/${data.media_type}/details/${data.id}/trailer`}
-        className="px-4 py-2 my-2 text-white rounded-full bg-[#6556CD] hover:bg-[#493ba5]"
+        className="px-4 py-2 my-2 text-white rounded-full transition-all ease-in  bg-[#6556CD] hover:bg-[#493ba5]"
       >
         Watch Trailler
       </Link></div>

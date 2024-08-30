@@ -10,6 +10,7 @@ import {
 import { asyncloadtv, removeTv } from "../store/actions/tvAction";
 import Loading from "./Loading";
 import HorizontalCards from "./partials/HorizontalCards";
+import imageNotFound from "../../public/imageNotFound.avif"
 
 const TvDetails = () => {
   const { pathname } = useLocation();
@@ -32,26 +33,27 @@ const TvDetails = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className="w-screen h-fit px-[10%] relative"
+      className="w-screen h-fit px-12 relative"
     >
       {/* Nav part 1 Navigation*/}
       <nav className="w-full h-[10vh] text-xl text-zinc-100 flex items-center gap-10">
         <Link
-          className="ri-arrow-left-line hover:text-[#6556CD]"
+          className="ri-arrow-left-line transition-all ease-in  hover:text-[#6556CD]"
           onClick={() => navigate(-1)}
         ></Link>
         <a target="_blank" href={info.detail.homepage}>
-          <i className="ri-external-link-fill"></i>
+          <i className="ri-external-link-fill transition-all ease-in  hover:text-[#6556CD]"></i>
         </a>
         <a
           target="_blank"
           href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}
         >
-          <i className="ri-earth-fill"></i>
+          <i className="ri-earth-fill transition-all ease-in  hover:text-[#6556CD]"></i>
         </a>
         <a
           target="_blank"
           href={`https://www.imdb.com/title/${info.externalid.imdb_id}`}
+          className=" transition-all ease-in  hover:text-[#6556CD]"
         >
           imdb
         </a>
@@ -60,7 +62,7 @@ const TvDetails = () => {
       {/* Nav part 2 Poster and details */}
       <div className="w-full flex">
         <img
-          className="h-[50vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover"
+          className="h-[50vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover rounded-3xl"
           src={`https://image.tmdb.org/t/p/original/${
             info.detail.poster_path || info.detail.backdrop_path
           }`}
@@ -86,23 +88,22 @@ const TvDetails = () => {
             <h1 className="font-semibold text-2xl leading-6">
               User <br /> Score
             </h1>
-            <h1>{info.detail.first_air_date}</h1>
-            <h1>
+            <h1 className=" drop-shadow-2xl">{info.detail.first_air_date}</h1>
+            <h1 className=" drop-shadow-2xl">
               {info.detail.genres.map((genres) => genres.name).join(",")}{" "}
             </h1>
-            <h1>{info.detail.runtime}min</h1>
           </div>
 
           <h1 className="font-bold italic text-xl text-zinc-200">
             {info.detail.tagline}
           </h1>
-          <h1 className="mt-5 text-xl font-semibold">Overview</h1>
-          <p>{info.detail.overview}</p>
-          <h1 className="mt-5 text-xl font-semibold">Tv Translated in</h1>
-          <p className="mb-10">{info.translations.join(", ")}</p>
+          <h1 className="mt-5 text-xl font-semibold drop-shadow-2xl">Overview</h1>
+          <p className="drop-shadow-2xl">{info.detail.overview}</p>
+          <h1 className="mt-5 text-xl font-semibold drop-shadow-2xl">Tv Translated in</h1>
+          <p className="mb-10 drop-shadow-2xl">{info.translations.join(", ")}</p>
 
           <Link
-            className="px-5 py-4 rounded-lg bg-[#6556CD]"
+            className="px-5 py-4 rounded-full transition-all ease-in  bg-[#6556CD] hover:bg-[#493ba5]"
             to={`${pathname}/trailer`}
           >
             <i className="ri-play-fill mr-3 text-xl"></i>
@@ -115,12 +116,12 @@ const TvDetails = () => {
       <div className="w-4/5 mt-10 flex flex-col gap-y-5">
         {info.watchproviders && info.watchproviders.flatrate && (
           <div className="text-white flex items-center gap-x-10">
-            <h1>Avaiable on Platfroms</h1>
+            <h1>Avaiable on Platfroms :</h1>
             {info.watchproviders.flatrate.map((watchprovider, index) => (
               <img
                 key={index}
                 title={watchprovider.provider_name}
-                className="w-[5vh] h-[5vh] object-cover rounded-md"
+                className="w-[5vh] h-[5vh] object-cover rounded-full"
                 src={`https://image.tmdb.org/t/p/original/${watchprovider.logo_path}`}
               />
             ))}
@@ -128,12 +129,12 @@ const TvDetails = () => {
         )}
         {info.watchproviders && info.watchproviders.rent && (
           <div className="text-white flex items-center gap-x-10">
-            <h1>Avaiable on Rent</h1>
+            <h1>Avaiable on Rent :</h1>
             {info.watchproviders.rent.map((watchprovider, index) => (
               <img
                 key={index}
                 title={watchprovider.provider_name}
-                className="w-[5vh] h-[5vh] object-cover rounded-md"
+                className="w-[5vh] h-[5vh] object-cover rounded-full"
                 src={`https://image.tmdb.org/t/p/original/${watchprovider.logo_path}`}
               />
             ))}
@@ -141,11 +142,11 @@ const TvDetails = () => {
         )}
         {info.watchproviders && info.watchproviders.buy && (
           <div className="text-white flex items-center gap-x-10">
-            <h1>Avaiable to Buy</h1>
+            <h1>Avaiable to Buy :</h1>
             {info.watchproviders.buy.map((watchprovider) => (
               <img
                 title={watchprovider.provider_name}
-                className="w-[5vh] h-[5vh] object-cover rounded-md"
+                className="w-[5vh] h-[5vh] object-cover rounded-full"
                 src={`https://image.tmdb.org/t/p/original/${watchprovider.logo_path}`}
               />
             ))}
@@ -158,12 +159,13 @@ const TvDetails = () => {
       <div className="w-full mb-5 p-5 flex overflow-y-hidden">
         {info.detail.seasons.length > 0 ? (
           info.detail.seasons.map((seasons, index) => (
-            <div className="w-[15vh] mr-[8%]" key={index}>
+            <div className="w-fit mr-5 flex flex-col items-center rounded-3xl transition-all ease-in duration-300 hover:bg-[#6556CD]" key={index}>
               <img
-                className="min-w-[14vw] h-[30vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover"
-                src={`https://image.tmdb.org/t/p/original/${seasons.poster_path}`}
+                className="w-[25vh] h-[40vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover rounded-3xl"
+                src={seasons.poster_path ? `https://image.tmdb.org/t/p/original/${seasons.poster_path}` : imageNotFound}
               />
-              <h1 className="mt-3 font-semibold text-2xl text-zinc-300">
+              {console.log(seasons)}
+              <h1 className="mt-3 font-semibold text-xl text-center text-zinc-300">
                 {seasons.name}
               </h1>
             </div>

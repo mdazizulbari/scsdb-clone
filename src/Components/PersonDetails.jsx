@@ -26,7 +26,7 @@ const PersonDetails = () => {
     };
   }, [id]);
   return info ? (
-    <div className="w-screen h-fit px-[10%] pb-10 flex flex-col bg-[#1F1E24]">
+    <div className="w-full h-fit px-12 pb-10 flex flex-col bg-[#1F1E24]">
       {/* Nav part 1 Navigation*/}
       <nav className="w-full h-[10vh] text-xl text-zinc-100 flex items-center gap-10">
         <Link
@@ -39,7 +39,7 @@ const PersonDetails = () => {
         {/* Nav part 2 Poster and details */}
         <div className="w-1/5">
           <img
-            className="h-[35vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover"
+            className="h-[35vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover rounded-3xl"
             src={`https://image.tmdb.org/t/p/original/${info.detail.profile_path}`}
           />
           <hr className="h-0.5 mt-10 mb-5 border-none bg-zinc-500" />
@@ -50,25 +50,25 @@ const PersonDetails = () => {
               target="_blank"
               href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}
             >
-              <i className="ri-earth-fill"></i>
+              <i className="ri-earth-fill transition-all ease-in  hover:text-[#6556CD]"></i>
             </a>
             <a
               target="_blank"
               href={`https://www.facebook.com/${info.externalid.facebook_id}`}
             >
-              <i className="ri-facebook-circle-fill"></i>
+              <i className="ri-facebook-circle-fill transition-all ease-in  hover:text-[#6556CD]"></i>
             </a>
             <a
               target="_blank"
               href={`https://www.instagram.com/${info.externalid.instagram_id}`}
             >
-              <i className="ri-instagram-fill"></i>
+              <i className="ri-instagram-fill transition-all ease-in  hover:text-[#6556CD]"></i>
             </a>
             <a
               target="_blank"
               href={`https://www.twitter.com/${info.externalid.twitter_id}`}
             >
-              <i className="ri-twitter-x-fill"></i>
+              <i className="ri-twitter-x-fill transition-all ease-in hover:text-[#6556CD]"></i>
             </a>
           </div>
 
