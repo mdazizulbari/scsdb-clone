@@ -3,7 +3,7 @@ import noimage from "../../../public/imageNotFound.avif";
 
 const HorizontalCards = ({ data=[] }) => {
   return (
-    <div className="w-full h-fit mb-5 p-5 flex overflow-y-hidden overflow-x-scroll">
+    <div className="w-full h-fit mb-5 p-5 pb-0 flex overflow-y-hidden overflow-x-scroll">
       {data.length>0 ? (
         data.map((d, i) => (
           <Link
