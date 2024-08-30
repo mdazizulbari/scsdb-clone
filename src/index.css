@@ -30,9 +30,10 @@ select{
     outline: 0;
     box-shadow: none;
     border: 0;
-    background: #27272a;
+    background: rgb(59, 59, 59);
     background-image: none;
-    padding: 0 .5em;
+    padding: 0 1em;
+    border-radius: 50rem;
     color: white;
     cursor: pointer;
     font-size: 1em;
@@ -45,12 +46,12 @@ select::-ms-expand{
 .select{
     position: relative;
     display: flex;
-    width: 20em;
+    width: 10em;
+    border-radius: 50rem;
     height: 3em;
     line-height: 3;
     overflow: hidden;
-    border-radius: .25em;
-    background: #27272a;
+    background: rgb(59, 59, 59);
 }
 .select::after{
     content: "\25BC";
@@ -60,8 +61,8 @@ select::-ms-expand{
     padding: 0em 1em;
     cursor: pointer;
     pointer-events: none;
-    transition: .25s all ease;
-    background: #27272a;
+    transition: .4s all ease;
+    background: rgb(59, 59, 59);
 }
 .select:hover::after{
     color: #6556CD;
