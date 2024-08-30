@@ -12,7 +12,7 @@ const HorizontalCards = ({ data=[] }) => {
             key={i}
           > 
             <img
-              className="w-64 h-36 object-cover"
+              className="w-64 h-36 object-cover rounded-3xl"
               src={
                 d.backdrop_path || d.profile_path || d.poster_path
                   ? `https://image.tmdb.org/t/p/original/${

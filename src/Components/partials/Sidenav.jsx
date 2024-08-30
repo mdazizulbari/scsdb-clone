@@ -2,54 +2,55 @@ import { Link } from "react-router-dom";
 
 const Sidenav = () => {
   return (
-    <div className="w-1/5 h-full p-10 border-r-2 border-zinc-400">
+    <div className="w-2/12 h-full p-5">
+    {/* <div className="w-1/5 h-full p-10 border-r-2 border-zinc-400"> */}
       <h1 className="text-2xl text-white font-bold">
         <i className="ri-tv-fill mr-2 text-[#6556CD]"></i>
         <span className="text-2xl">SCSDB.</span>
       </h1>
 
-      <nav className="text-xl text-zinc-400 flex flex-col gap-3">
-        <h1 className="mt-10 mb-5 text-xl text-white font-semibold">
+      <nav className="mb-5 mt-10 text-xl text-zinc-400 flex flex-col gap-3">
+        {/* <h1 className="mt-10 mb-5 text-xl text-white font-semibold">
           New Feed
-        </h1>
+        </h1> */}
         <Link
           to="/trending"
-          className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
+          className="p-5 rounded-full hover:bg-[#6556CD] hover:text-white duration-300"
         >
           <i className="mr-2 ri-fire-fill"></i>
           Trending
         </Link>
         <Link
           to="/popular"
-          className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
+          className="p-5 rounded-full hover:bg-[#6556CD] hover:text-white duration-300"
         >
           <i className="mr-2 ri-bard-fill"></i>
           Popular
         </Link>
         <Link
           to="/movie"
-          className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
+          className="p-5 rounded-full hover:bg-[#6556CD] hover:text-white duration-300"
         >
           <i className="mr-2 ri-movie-2-fill"></i>
           Movies
         </Link>
         <Link
           to="/tv"
-          className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
+          className="p-5 rounded-full hover:bg-[#6556CD] hover:text-white duration-300"
         >
           <i className="mr-2 ri-tv-2-fill"></i>
           Tv Shows
         </Link>
         <Link
           to="/person"
-          className="p-5 rounded-lg hover:bg-[#6556CD] hover:text-white duration-300"
+          className="p-5 rounded-full hover:bg-[#6556CD] hover:text-white duration-300"
         >
           <i className="mr-2 ri-team-fill"></i>
           People
         </Link>
       </nav>
 
-      <hr className="h-0.5 border-none bg-zinc-400" />
+      {/* <hr className="h-0.5 border-none bg-zinc-400" />
       <nav className="text-xl text-zinc-400 flex flex-col gap-3">
         <h1 className="mt-10 mb-5 text-xl text-white font-semibold">
           Website Information
@@ -62,7 +63,7 @@ const Sidenav = () => {
           <i className="mr-2 ri-phone-fill"></i>
           Contact
         </Link>
-      </nav>
+      </nav> */}
     </div>
   );
 };
