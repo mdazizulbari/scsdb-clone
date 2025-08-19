@@ -1,9 +1,6 @@
 # SCSDB Clone
 A Netflix-inspired movie database application built as part of my MERN stack journey at Sheryians Coding School. This project fetches and displays detailed movie information from external APIs, delivering a sleek, user-friendly interface.
 
-## 📸 Screenshot
-*Insert a clean screenshot of the project here*
-
 ## 🌐 Live Project
 [View SCSDB Clone Live](https://scsdb-clone.vercel.app) 
 
@@ -22,14 +19,30 @@ A Netflix-inspired movie database application built as part of my MERN stack jou
 ```json
 {
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "axios": "^1.4.0",
-    "tailwindcss": "^3.3.0"
+    "@reduxjs/toolkit": "^2.2.7",
+    "axios": "^1.7.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.3.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-player": "^2.16.0",
+    "react-redux": "^9.1.2",
+    "react-router-dom": "^6.26.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.0.0",
-    "vite": "^4.3.9"
+    "@eslint/js": "^9.9.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "vite": "^5.4.1"
   }
 }
 ```
